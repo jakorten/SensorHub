@@ -4,12 +4,7 @@ void pinModeTest( uint32_t ulPin, uint32_t ulMode )
   // Handle the case the pin isn't usable as PIO
   Serial.print("D");
   Serial.print(ulPin);
-  if ( g_APinDescription[ulPin].ulPinType == PIO_NOT_A_PIN )
-  {
-    Serial.print(" is not usable as PIO");
-    Serial.println();
-    return ;
-  }
+  
 
   EPortType port = g_APinDescription[ulPin].ulPort;
   uint32_t pin = g_APinDescription[ulPin].ulPin;
@@ -24,5 +19,11 @@ void pinModeTest( uint32_t ulPin, uint32_t ulMode )
   Serial.print(" Mask: ");
   Serial.print(pinMask, BIN);
   */
+  if ( g_APinDescription[ulPin].ulPinType == PIO_NOT_A_PIN )
+  {
+    Serial.print(" is not usable as PIO");
+    Serial.println();
+    return ;
+  }
   Serial.println();
 }

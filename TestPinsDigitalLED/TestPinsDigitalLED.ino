@@ -30,6 +30,10 @@ void setup() {
   initSerial();
   initialSetPins();
 
+  while(!Serial);
+
+  delay(5000);
+  
   for (int i = 0; i < 50; i++) {
     pinModeTest(i, HIGH);
   }
